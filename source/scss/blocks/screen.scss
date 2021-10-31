@@ -17,6 +17,9 @@
   @media (max-width: $tablet - 1) and (orientation: landscape) {
     height: 100vh;
   }
+
+
+
 }
 
 .screen__wrapper {
@@ -353,4 +356,18 @@
 
 .screen--rules {
   background-color: $c-dark;
+}
+
+.intro__message {
+  opacity: 0;
+  margin-bottom: -10px;
+}
+
+.screen.active {
+  .intro__message {
+    opacity: 1;
+    margin-bottom: 0px;
+    transition-property: opacity, margin-bottom;
+    transition-duration: 0.7s;
+  }
 }
