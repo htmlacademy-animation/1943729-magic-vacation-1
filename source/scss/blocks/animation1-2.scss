@@ -68,7 +68,9 @@ body.page_load .screen__disclaimer {
     opacity: 1;
     pointer-events: painted;
   }
-
+  body.page_load .page-header__menu li a.active::after {
+    background-color: #a67ee5;
+}
   .social-block .social-block__list,
   .social-block li {
     opacity: 1;
