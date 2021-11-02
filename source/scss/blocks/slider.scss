@@ -276,3 +276,31 @@
     }
   }
 }
+
+
+
+// ANIMATION
+
+
+.slider__item {
+  .slider__item-text {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+.swiper-slide-active,
+.swiper-slide-next {
+  .slider__item-text {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: transform 300ms, opacity 300ms;
+    transition-delay: 300ms;
+  }
+}
+
+.swiper-slide-next {
+  .slider__item-text {
+    transition-delay:500ms
+  }
+}

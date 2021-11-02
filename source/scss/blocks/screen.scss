@@ -354,3 +354,22 @@
 .screen--rules {
   background-color: $c-dark;
 }
+
+
+// ANIMATION
+
+.intro__message {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: visibility 0s linear .4s, opacity .4s linear, transform .4s;
+}
+
+.screen.active {
+  .intro__message {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: 0s;
+  }
+}

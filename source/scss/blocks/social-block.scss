@@ -1,12 +1,6 @@
 .social-block {
   position: relative;
 
-  &:hover {
-    .social-block__list {
-      opacity: 1;
-      pointer-events: auto;
-    }
-  }
 }
 
 .social-block__toggler {
@@ -62,8 +56,7 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
-      opacity: 1;
+    &+.social-block__list {
       pointer-events: auto;
     }
   }
@@ -87,7 +80,6 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
-  opacity: 0;
   pointer-events: none;
 
   @media (min-width: $stop-scaling) {
@@ -238,6 +230,46 @@
       @media (min-width: $stop-scaling) {
         width: 10px;
         height: 10px;
+      }
+    }
+  }
+}
+
+
+// ANIMATION
+
+.social-block {
+
+  .social-block__list {
+    opacity: 0;
+    transition: opacity;
+    transition-duration: 200ms;
+  }
+
+  li {
+    opacity: 0;
+    transition-duration: 300ms;
+    transform: translateY(10px);
+  }
+
+  &:hover,.social-block__toggler:focus + {
+
+    .social-block__list {
+      opacity: 1;
+      transition: opacity 300ms;
+      
+      li{
+        opacity: 1;
+        transform: translateY(0px);
+        transition: transform 300ms, opacity 300ms;
+      }
+
+      li:nth-of-type(2) {
+        transition-delay: 150ms;
+      }
+
+      li:nth-of-type(3) {
+        transition-delay: 300ms;
       }
     }
   }

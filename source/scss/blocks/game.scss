@@ -121,3 +121,38 @@
   margin: 0 30px 30px;
   display: block;
 }
+
+.question-wrapper {
+  width: calc(100% - 21rem);
+  display: flex;
+  justify-content: flex-end;
+
+  @media (orientation: portrait) {
+    width: calc(100% - 5rem);
+  }
+
+  @media (max-width: $tablet) and (orientation: landscape) {
+    width: calc(100% - 9rem);
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    width: calc(100% - 5rem);
+  }
+}
+
+
+// ANIMATION
+
+
+section#game {
+  input#message-field {
+    width: 0;
+  }
+}
+
+section#game.active {
+  input#message-field {
+    width: 100%;
+    transition: width 500ms;
+  }
+}
