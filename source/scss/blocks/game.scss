@@ -140,6 +140,10 @@
   }
 }
 
+
+// ANIMATION
+
+
 section#game {
   input#message-field {
     width: 0;
@@ -149,7 +153,6 @@ section#game {
 section#game.active {
   input#message-field {
     width: 100%;
-    transition-property: width;
-    transition-duration: 500ms;
+    transition: width 500ms;
   }
 }

@@ -1,22 +1,6 @@
 .social-block {
   position: relative;
 
-  .social-block__list {
-    top: 150%;
-    transition-duration: 200ms
-  }
-
-
-
-  &:hover {
-    .social-block__list {
-      opacity: 1;
-      top: 100%;
-      pointer-events: auto;
-      transition-property: opacity, top;
-      transition-duration: 300ms, 300ms;
-    }
-  }
 }
 
 .social-block__toggler {
@@ -73,7 +57,6 @@
     }
 
     &+.social-block__list {
-      opacity: 1;
       pointer-events: auto;
     }
   }
@@ -97,7 +80,6 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
-  opacity: 0;
   pointer-events: none;
 
   @media (min-width: $stop-scaling) {
@@ -150,16 +132,10 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
-
-
-    li {
-      opacity: 1;
-    }
   }
 
   li {
     flex: none;
-    opacity: 0;
     margin-bottom: 0.5rem;
 
     @media (min-width: $stop-scaling) {
@@ -173,24 +149,6 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       margin: 0 1.25rem;
     }
-  }
-
-  li:nth-of-type(1) {
-    transition-property: opacity;
-    transition-delay: 0ms;
-    transition-duration: 300ms;
-  }
-
-  li:nth-of-type(2) {
-    transition-property: opacity;
-    transition-delay: 150ms;
-    transition-duration: 300ms;
-  }
-
-  li:nth-of-type(3) {
-    transition-property: opacity;
-    transition-delay: 300ms;
-    transition-duration: 300ms;
   }
 }
 
@@ -272,6 +230,46 @@
       @media (min-width: $stop-scaling) {
         width: 10px;
         height: 10px;
+      }
+    }
+  }
+}
+
+
+// ANIMATION
+
+.social-block {
+
+  .social-block__list {
+    opacity: 0;
+    transition: opacity;
+    transition-duration: 200ms;
+  }
+
+  li {
+    opacity: 0;
+    transition-duration: 300ms;
+    transform: translateY(10px);
+  }
+
+  &:hover,.social-block__toggler:focus + {
+
+    .social-block__list {
+      opacity: 1;
+      transition: opacity 300ms;
+      
+      li{
+        opacity: 1;
+        transform: translateY(0px);
+        transition: transform 300ms, opacity 300ms;
+      }
+
+      li:nth-of-type(2) {
+        transition-delay: 150ms;
+      }
+
+      li:nth-of-type(3) {
+        transition-delay: 300ms;
       }
     }
   }
