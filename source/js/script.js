@@ -38,20 +38,25 @@ const config = {
 };
 
 const callback = function (mutationsList) {
+
+  const backgroundPage = document.querySelector('.liqud-background')
+  const toPrize = document.querySelector('a[href="#prizes"]')
+
   if (target.classList.contains('active')) {
 
-    const backgroundPage = document.querySelector('.liqud-background')
-    const toPrize = document.querySelector('a[href="#prizes"]')
-    
-    toPrize.addEventListener("click", function () {
+    toPrize.addEventListener("click", function (e) {
+      e.preventDefault();
       backgroundPage.classList.add('waiting');
+
       setTimeout(() => {
+        window.location.replace(e.target.href)
         backgroundPage.classList.remove('waiting');
       }, 1000)
     }, {
       once: true
     });
-  }
+  
+  } 
 };
 
 const observer = new MutationObserver(callback);

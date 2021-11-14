@@ -20,11 +20,11 @@
 
 .liqud-background.waiting {
   opacity: 1;
-  transform: translateY(-100vh);
+  transform: translateY(0);
 }
 
 .liqud-background {
   opacity: 0;
-  transform: translateY(0);
+  transform: translateY(100vh);
   transition: transform 1s;
 }
