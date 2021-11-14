@@ -47,7 +47,7 @@ const callback = function (mutationsList) {
       backgroundPage.classList.add('waiting');
       setTimeout(() => {
         backgroundPage.classList.remove('waiting');
-      }, 500)
+      }, 1000)
     }, {
       once: true
     });
