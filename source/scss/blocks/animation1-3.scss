@@ -1,0 +1,30 @@
+.page-header__menu ul {
+
+  li {
+    &:nth-of-type(2) {
+      a.active {}
+    }
+  }
+}
+
+.liqud-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #5f458c;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.liqud-background.waiting {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.liqud-background {
+  opacity: 0;
+  transform: translateY(100vh);
+  transition: transform 1s;
+}

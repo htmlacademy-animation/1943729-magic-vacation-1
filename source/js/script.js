@@ -22,6 +22,43 @@ social();
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
-document.addEventListener("DOMContentLoaded", function(){
-    document.body.classList.add('page_load');
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.classList.add('page_load');
 })
+
+
+// Аннимация на секцию ПРИЗЫ - START
+
+var target = document.getElementById('story');
+const config = {
+  className: true,
+  attributes: true,
+  childList: true,
+  subtree: true
+};
+
+const callback = function (mutationsList) {
+
+  const backgroundPage = document.querySelector('.liqud-background')
+  const toPrize = document.querySelector('a[href="#prizes"]')
+
+  if (target.classList.contains('active')) {
+
+    toPrize.addEventListener("click", function (e) {
+      e.preventDefault();
+      backgroundPage.classList.add('waiting');
+
+      setTimeout(() => {
+        window.location.replace(e.target.href)
+        backgroundPage.classList.remove('waiting');
+      }, 1000)
+    }, {
+      once: true
+    });
+  
+  } 
+};
+
+const observer = new MutationObserver(callback);
+observer.observe(target, config);
+// Аннимация на секцию ПРИЗЫ - END
