@@ -39,7 +39,7 @@ export default () => {
 
 
       this._timeOffset = this.treckerLatter;
-      console.log(this.textRow)
+      
       if (this.delayMethod == "plus") {
         this.treckerLatter += this._timer / 2;
         if (this.treckerLatter >= this._timer) {
