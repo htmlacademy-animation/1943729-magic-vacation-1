@@ -359,7 +359,8 @@
 // ANIMATION
 
 // message-quest
-.intro__message {
+.intro__message,
+.intro__label {
   visibility: hidden;
   opacity: 0;
   transform: translateY(10px);
@@ -371,7 +372,13 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0px);
-    transition-delay: 0s;
+    transition-delay: 750ms;
+  }
+
+  .intro__label {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: 1000ms;
   }
 }
-
