@@ -294,13 +294,14 @@
   .slider__item-text {
     opacity: 1;
     transform: translateX(0px);
-    transition: transform 300ms, opacity 300ms;
-    transition-delay: 300ms;
+    transition: transform, opacity;
+    transition-duration: 300ms;
+    transition-delay: 500ms;
   }
 }
 
 .swiper-slide-next {
   .slider__item-text {
-    transition-delay:500ms
+    transition-delay: 300ms
   }
 }

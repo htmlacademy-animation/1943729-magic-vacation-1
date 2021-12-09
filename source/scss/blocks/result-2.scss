@@ -1,0 +1,300 @@
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bag-animation {
+  0% {
+    transform: scale(0.1) translateY(200%);
+  }
+
+  70% {
+    transform: scale(1) translateY(-4%);
+  }
+
+  90% {
+    transform: scale(1) translateY(2%);
+  }
+
+  100% {
+    transform: scale(1) translateY(0%);
+  }
+}
+
+@keyframes flamingo-animation {
+  0% {
+    transform: scale(0.1) translateY(100%);
+  }
+
+  45% {
+    transform: scale(1) translateY(-5%);
+  }
+
+  60% {
+    transform: scale(1) translateY(2%);
+  }
+
+  70% {
+    transform: scale(1) translateY(-1%);
+  }
+
+  100% {
+    transform: scale(1) translateY(1%);
+  }
+
+}
+
+@keyframes flamingo-infinite-animation {
+  0% {
+    transform: translate3d(0px, 1%, 0px);
+  }
+
+  50% {
+    transform: translate3d(0px, -2%, 0px);
+  }
+
+  100% {
+    transform: translate3d(0px, 1%, 0px);
+  }
+}
+
+@keyframes leaf-animation {
+  0% {
+    transform: rotate(-10deg) translateY(-30%);
+  }
+
+  20% {
+    transform: rotate(8deg) translateY(30%);
+  }
+
+  40% {
+    transform: rotate(-6deg) translateY(-15%);
+  }
+
+  60% {
+    transform: rotate(4deg) translateY(15%);
+  }
+
+  75% {
+    transform: rotate(-2deg) translateY(-6%);
+  }
+
+  90% {
+    transform: rotate(1deg) translateY(3%);
+  }
+
+  100% {
+    transform: rotate(0deg) translateY(0%);
+  }
+}
+
+@keyframes leaf-blue-left-animation {
+  0% {
+    transform: rotate(45deg) translateY(-90px);
+  }
+
+  40% {
+    transform: rotate(-20deg) translateY(40px);
+  }
+
+  60% {
+    transform: rotate(10deg) translateY(-20px);
+  }
+
+  80% {
+    transform: rotate(-5deg) translateY(10px);
+  }
+
+  90% {
+    transform: rotate(-3deg) translateY(6px);
+  }
+
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+}
+
+@keyframes leaf-blue-right-animation {
+  0% {
+    transform: rotate(-20deg) translateX(-80px);
+  }
+
+  40% {
+    transform: rotate(10deg) translateX(40px);
+  }
+
+  60% {
+    transform: rotate(-5deg) translateY(-20px);
+  }
+
+  75% {
+    transform: rotate(4deg) translateY(16px);
+  }
+
+  90% {
+    transform: rotate(-2deg) translateY(-8px);
+  }
+
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+}
+
+@keyframes input_form-animation {
+  0% {
+    max-width: 0%;
+  }
+
+  100% {
+    max-width: 100%;
+  }
+}
+
+.result__image {
+  height: 100vh;
+}
+
+.result__image picture {
+  position: absolute;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 950px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.image-wrapper img {
+  position: absolute;
+}
+
+.image-wrapper .flamingo {
+  max-width: 37.9%;
+  width: 100%;
+  height: auto;
+  z-index: 4;
+  left: 15.1%;
+  bottom: 17.5%;
+  animation-name: flamingo-animation, FadeIn, flamingo-infinite-animation;
+  animation-duration: 2s, 1s, 2s;
+  animation-delay: 0ms, 0ms, 2s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-timing-function: ease-in-out, linear, linear;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.image-wrapper .bag {
+  max-width: 50%;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  bottom: 17%;
+  left: 20%;
+  animation-name: bag-animation;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+
+.image-wrapper .leaf {
+  max-width: 48%;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  right: 6.8%;
+  bottom: 23.7%;
+  opacity: 0;
+  animation-name: leaf-animation, FadeIn;
+  animation-duration: 2s, 500ms;
+  animation-delay: 250ms;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.image-wrapper .leaf-blue-right {
+  max-width: 40.5%;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  right: 9.5%;
+  bottom: 27.9%;
+  animation-name: leaf-blue-right-animation, FadeIn;
+  animation-duration: 2s, 1s;
+  animation-timing-function: ease-in-out, linear;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 500ms;
+}
+
+.image-wrapper .leaf-blue-left {
+  max-width: 37.5%;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  left: 0px;
+  bottom: 17%;
+  animation-name: leaf-blue-left-animation, FadeIn;
+  animation-duration: 2s, 1s;
+  animation-timing-function: ease-in-out, linear;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 500ms;
+}
+
+.result__form {
+  .form {
+    .form__button {
+      max-width: 28rem;
+      opacity: 0;
+      animation-name: FadeIn;
+      animation-duration: 300ms;
+      animation-delay: 750ms;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .form__field {
+      max-width: 0%;
+      opacity: 0;
+      animation-name: input_form-animation, FadeIn;
+      animation-duration: 300ms;
+      animation-delay: 950ms, 850ms;
+      animation-timing-function: linear, ease-in-out;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .image-wrapper {
+    width: 85%;
+  };
+}
+
+@media (max-width:700px) {
+  .image-wrapper {
+    width: 110%;
+  };
+}
+
+@media (max-width:650px) {
+  .image-wrapper {
+    width: 130%;
+  };
+}
+
+@media (max-width:600px) {
+  .image-wrapper {
+    width: 950px;
+  };
+};
