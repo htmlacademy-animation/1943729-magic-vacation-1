@@ -4679,15 +4679,22 @@ body.page_load .screen__disclaimer {
 
 @media (max-width: 768px) {
   .image-wrapper {
-    width: 155%;
-    top: 53px;
-    left: 44px;
+    width: 85%;
+  }
+}
+@media (max-width: 700px) {
+  .image-wrapper {
+    width: 110%;
+  }
+}
+@media (max-width: 650px) {
+  .image-wrapper {
+    width: 130%;
   }
 }
 @media (max-width: 600px) {
   .image-wrapper {
     width: 950px;
-    left: 1%;
   }
 }
 
