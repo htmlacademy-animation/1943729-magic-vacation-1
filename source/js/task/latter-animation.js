@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export default () => {
   class AccentTypographyBuild {
     constructor(
@@ -18,38 +19,44 @@ export default () => {
       this._timeOffset = this._timer;
       this.treckerLatter = this._timer / 2;
       this._styleRow = styleRow;
-      this._delay = delay
-      this.delayMethod = "minus";
+      this._delay = delay;
+      this.delayMethod = `minus`;
       this.textRow = 0;
       this.prePareText();
-    };
+    }
 
     createElement(letter) {
       const span = document.createElement(`span`);
       span.textContent = letter;
+      let property = this._property;
+      let propertyDuration = this._timer;
+      let propertyDelay;
+      // Проверка на анимацию второй строки
       if (!this._styleRow) {
-        if (this.textRow == "0") {
-          span.style.transition = `${this._property} ${this._timer}ms ease ${this._timeOffset+this._delay}ms`;
+        if (this.textRow === 1) {
+          propertyDelay = this._timeOffset + this._timer + this._delay;
         } else {
-          span.style.transition = `${this._property} ${this._timer}ms ease ${this._timeOffset+this._timer+this._delay}ms`;
+          propertyDelay = this._timeOffset + this._delay;
         }
       } else {
-        span.style.transition = `${this._property} ${this._timer}ms ease ${this._timeOffset+this._delay}ms`;
+        propertyDelay = this._timeOffset + this._delay;
       }
 
+      span.style.transition = `${property} ${propertyDuration}ms ease ${propertyDelay}ms`;
 
       this._timeOffset = this.treckerLatter;
-      
-      if (this.delayMethod == "plus") {
+
+      // Логика увеличения и уменьшении задержки в анимациях букв
+      if (this.delayMethod === `plus`) {
         this.treckerLatter += this._timer / 2;
         if (this.treckerLatter >= this._timer) {
-          this.delayMethod = 'minus';
+          this.delayMethod = `minus`;
         }
       } else {
 
         this.treckerLatter -= this._timer / 2;
         if (this.treckerLatter <= 0) {
-          this.delayMethod = 'plus';
+          this.delayMethod = `plus`;
         }
       }
 
@@ -60,7 +67,7 @@ export default () => {
       if (!this._element) {
         return;
       }
-      const text = this._element.textContent.trim().split(` `).filter((latter) => latter !== '');
+      const text = this._element.textContent.trim().split(` `).filter((latter) => latter !== ``);
 
       const content = text.reduce((fragmentParent, word) => {
         const wordElement = Array.from(word).reduce((fragment, latter) => {
@@ -92,12 +99,12 @@ export default () => {
   }
 
 
-  const animationMainScreenTitle = new AccentTypographyBuild(`.intro__title`, 500, `active`, `transform`, false, 0);
-  const animationHistoryScreenTitle = new AccentTypographyBuild(`.slider__item-title`, 500, `active`, `transform`, false, 0);
-  const animationPrizesScreenTitle = new AccentTypographyBuild(`.prizes__title`, 500, `active`, `transform`, false, 0);
-  const animationRulesScreenTitle = new AccentTypographyBuild(`.rules__title`, 500, `active`, `transform`, false, 0);
-  const animationGameScreenTitle = new AccentTypographyBuild(`.game__title`, 500, `active`, `transform`, false, 0);
-  
-  const animationMainScreenData = new AccentTypographyBuild(`.intro__date`, 500, `active`, `transform`, true, 1000);
-  
-}
+  const animationMainScreenTitle = new AccentTypographyBuild(`.intro__title`, 300, `active`, `transform`, false, 0);
+  const animationHistoryScreenTitle = new AccentTypographyBuild(`.slider__item-title`, 300, `active`, `transform`, false, 0);
+  const animationPrizesScreenTitle = new AccentTypographyBuild(`.prizes__title`, 300, `active`, `transform`, false, 0);
+  const animationRulesScreenTitle = new AccentTypographyBuild(`.rules__title`, 300, `active`, `transform`, false, 0);
+  const animationGameScreenTitle = new AccentTypographyBuild(`.game__title`, 300, `active`, `transform`, false, 0);
+
+  const animationMainScreenData = new AccentTypographyBuild(`.intro__date`, 300, `active`, `transform`, true, 500);
+
+};

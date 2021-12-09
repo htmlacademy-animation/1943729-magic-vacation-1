@@ -8,7 +8,7 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
-import AnimatiTitle from './task/module2-task2.js';
+import letterAnimation from './task/latter-animation.js';
 // init modules
 mobileHeight();
 slider();
@@ -19,19 +19,19 @@ result();
 form();
 social();
 
-AnimatiTitle();
+letterAnimation();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.body.classList.add('page_load');
-})
+document.addEventListener(`DOMContentLoaded`, function () {
+  document.body.classList.add(`page_load`);
+});
 
 
 // Аннимация на секцию ПРИЗЫ - START
 
-var target = document.getElementById('story');
+let target = document.getElementById(`story`);
 const config = {
   className: true,
   attributes: true,
@@ -39,26 +39,26 @@ const config = {
   subtree: true
 };
 
-const callback = function (mutationsList) {
+const callback = function () {
 
-  const backgroundPage = document.querySelector('.liqud-background')
-  const toPrize = document.querySelector('a[href="#prizes"]')
+  const backgroundPage = document.querySelector(`.liqud-background`);
+  const toPrize = document.querySelector(`a[href="#prizes"]`);
 
-  if (target.classList.contains('active')) {
+  if (target.classList.contains(`active`)) {
 
-    toPrize.addEventListener("click", function (e) {
+    toPrize.addEventListener(`click`, function (e) {
       e.preventDefault();
-      backgroundPage.classList.add('waiting');
+      backgroundPage.classList.add(`waiting`);
 
       setTimeout(() => {
-        window.location.replace(e.target.href)
-        backgroundPage.classList.remove('waiting');
-      }, 1000)
+        window.location.replace(e.target.href);
+        backgroundPage.classList.remove(`waiting`);
+      }, 1000);
     }, {
       once: true
     });
-  
-  } 
+
+  }
 };
 
 const observer = new MutationObserver(callback);

@@ -43,14 +43,24 @@
     transform: scale(1) translateY(-1%);
   }
 
-  90% {
+  100% {
     transform: scale(1) translateY(1%);
   }
 
-  100% {
-    transform: scale(1) translateY(0);
+}
+
+@keyframes flamingo-infinite-animation {
+  0% {
+    transform: translate3d(0px, 1%, 0px);
   }
 
+  50% {
+    transform: translate3d(0px, -2%, 0px);
+  }
+
+  100% {
+    transform: translate3d(0px, 1%, 0px);
+  }
 }
 
 @keyframes leaf-animation {
@@ -135,6 +145,16 @@
   }
 }
 
+@keyframes input_form-animation {
+  0% {
+    max-width: 0%;
+  }
+
+  100% {
+    max-width: 100%;
+  }
+}
+
 .result__image {
   height: 100vh;
 }
@@ -163,9 +183,11 @@
   z-index: 4;
   left: 15.1%;
   bottom: 17.5%;
-  animation-name: flamingo-animation, FadeIn;
-  animation-duration: 2s, 1s;
-  animation-timing-function: ease-in-out, linear;
+  animation-name: flamingo-animation, FadeIn, flamingo-infinite-animation;
+  animation-duration: 2s, 1s, 2s;
+  animation-delay: 0ms, 0ms, 2s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-timing-function: ease-in-out, linear, linear;
   animation-fill-mode: forwards;
   opacity: 0;
 }
@@ -229,6 +251,30 @@
   animation-delay: 500ms;
 }
 
+.result__form {
+  .form {
+    .form__button {
+      max-width: 28rem;
+      opacity: 0;
+      animation-name: FadeIn;
+      animation-duration: 300ms;
+      animation-delay: 750ms;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    .form__field {
+      max-width: 0%;
+      opacity: 0;
+      animation-name: input_form-animation, FadeIn;
+      animation-duration: 300ms;
+      animation-delay: 950ms, 850ms;
+      animation-timing-function: linear, ease-in-out;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
 @media (max-width:768px) {
   .image-wrapper {
     width: 155%;
@@ -240,6 +286,6 @@
 @media (max-width:600px) {
   .image-wrapper {
     width: 950px;
-    left: 15px;
+    left: 1%;
   }
 }
