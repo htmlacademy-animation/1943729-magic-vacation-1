@@ -1708,9 +1708,8 @@ img {
 .game__buttons {
   position: fixed;
   left: 0;
+  top: 280px;
   z-index: 100;
-  opacity: 0.5;
-  display: none;
 }
 
 .game__button {
@@ -3637,13 +3636,13 @@ section#game.active input#message-field {
   opacity: 1;
   visibility: visible;
   transform: translateY(0px);
-  transition-delay: 750ms;
+  transition-delay: 500ms;
 }
 .screen.active .intro__label {
   opacity: 1;
   visibility: visible;
   transform: translateY(0px);
-  transition-delay: 1000ms;
+  transition-delay: 500ms;
 }
 
 .slider {
@@ -3952,12 +3951,12 @@ section#game.active input#message-field {
   opacity: 1;
   transform: translateX(0px);
   transition: transform, opacity;
-  transition-duration: 500ms;
-  transition-delay: 750ms;
+  transition-duration: 300ms;
+  transition-delay: 500ms;
 }
 
 .swiper-slide-next .slider__item-text {
-  transition-delay: 500ms;
+  transition-delay: 300ms;
 }
 
 .social-block {
@@ -4386,10 +4385,10 @@ body.page_load .screen__disclaimer {
   max-width: 0%;
   color: transparent;
   animation-name: ankorRules, opacityText;
-  animation-duration: 1s, 300ms;
-  animation-delay: 1800ms, 1500ms;
+  animation-duration: 300ms, 300ms;
+  animation-delay: 1100ms, 1000ms;
   animation-fill-mode: forwards;
-  animation-timing-function: linear;
+  animation-timing-function: linear, ease-in-out;
 }
 
 .rules__item:nth-of-type(1):before {
@@ -4478,11 +4477,19 @@ body.page_load .screen__disclaimer {
   70% {
     transform: scale(1) translateY(-1%);
   }
-  90% {
+  100% {
     transform: scale(1) translateY(1%);
   }
+}
+@keyframes flamingo-infinite-animation {
+  0% {
+    transform: translate3d(0px, 1%, 0px);
+  }
+  50% {
+    transform: translate3d(0px, -2%, 0px);
+  }
   100% {
-    transform: scale(1) translateY(0);
+    transform: translate3d(0px, 1%, 0px);
   }
 }
 @keyframes leaf-animation {
@@ -4548,11 +4555,14 @@ body.page_load .screen__disclaimer {
     transform: rotate(0deg) translateY(0px);
   }
 }
-section#result2 {
-  display: block;
-  opacity: 1;
+@keyframes input_form-animation {
+  0% {
+    max-width: 0%;
+  }
+  100% {
+    max-width: 100%;
+  }
 }
-
 .result__image {
   height: 100vh;
 }
@@ -4581,9 +4591,11 @@ section#result2 {
   z-index: 4;
   left: 15.1%;
   bottom: 17.5%;
-  animation-name: flamingo-animation, FadeIn;
-  animation-duration: 2s, 1s;
-  animation-timing-function: ease-in-out, linear;
+  animation-name: flamingo-animation, FadeIn, flamingo-infinite-animation;
+  animation-duration: 2s, 1s, 2s;
+  animation-delay: 0ms, 0ms, 2s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-timing-function: ease-in-out, linear, linear;
   animation-fill-mode: forwards;
   opacity: 0;
 }
@@ -4646,6 +4658,25 @@ section#result2 {
   animation-delay: 500ms;
 }
 
+.result__form .form .form__button {
+  max-width: 28rem;
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-duration: 300ms;
+  animation-delay: 750ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.result__form .form .form__field {
+  max-width: 0%;
+  opacity: 0;
+  animation-name: input_form-animation, FadeIn;
+  animation-duration: 300ms;
+  animation-delay: 950ms, 850ms;
+  animation-timing-function: linear, ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 @media (max-width: 768px) {
   .image-wrapper {
     width: 155%;
@@ -4656,7 +4687,7 @@ section#result2 {
 @media (max-width: 600px) {
   .image-wrapper {
     width: 950px;
-    left: 15px;
+    left: 1%;
   }
 }
 
