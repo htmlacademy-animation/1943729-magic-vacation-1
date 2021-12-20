@@ -1,92 +1,116 @@
-.disclaimer {
-  color: $c-dark;
-  background-color: $c-light;
+.screen {
 
-  @media (max-width: $tablet) and (orientation: portrait) {
-    font-weight: 400;
-    color: $c-light;
-    background-color: transparent;
-  }
+  &:not(.active) {
 
-  @media (max-width: $mobile) and (orientation: landscape) {
-    font-weight: 400;
-    color: $c-light;
-    background-color: transparent;
-  }
-
-  ul {
-    @include list-reset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    line-height: 1.2;
-
-    @media (min-width: $stop-scaling) {
-      font-size: 12px;
+    .screen__disclaimer,
+    .screen__footer {
+      transform: translateY(100%);
     }
+  }
+
+  &.active {
+
+    .screen__disclaimer,
+    .screen__footer {
+      opacity: 1;
+      transform: translateY(0%);
+      transition: transform 800ms;
+      transition-timing-function: cubic-bezier(0.08, 0.87, 0.3, 1);
+    }
+  }
+}
+
+.screen__disclaimer {
+  .disclaimer {
+    color: $c-dark;
+    background-color: $c-light;
 
     @media (max-width: $tablet) and (orientation: portrait) {
-      font-size: 1rem;
-      opacity: 0.5;
+      font-weight: 400;
+      color: $c-light;
+      background-color: transparent;
     }
 
     @media (max-width: $mobile) and (orientation: landscape) {
-      font-size: 1rem;
-      opacity: 0.5;
-    }
-  }
-
-  li {
-    position: relative;
-    padding: 0 0.6rem;
-
-    @media (min-width: $stop-scaling) {
-      padding: 0 6px;
+      font-weight: 400;
+      color: $c-light;
+      background-color: transparent;
     }
 
-    @media (max-width: $tablet) and (orientation: portrait) {
-      padding: 0 0.4rem;
-    }
+    ul {
+      @include list-reset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      line-height: 1.2;
 
-    @media (max-width: $mobile) and (orientation: landscape) {
-      padding: 0 0.4rem;
-    }
+      @media (min-width: $stop-scaling) {
+        font-size: 12px;
+      }
 
-    &::before {
-      content: "/";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translate(-50%, -50%);
-    }
+      @media (max-width: $tablet) and (orientation: portrait) {
+        font-size: 1rem;
+        opacity: 0.5;
+      }
 
-    &:first-child {
-      &::before {
-        display: none;
+      @media (max-width: $mobile) and (orientation: landscape) {
+        font-size: 1rem;
+        opacity: 0.5;
       }
     }
-  }
 
-  a {
-    @include hover;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0.9rem 0 0.7rem;
-    text-decoration: underline;
-    color: inherit;
+    li {
+      position: relative;
+      padding: 0 0.6rem;
 
-    @media (min-width: $stop-scaling) {
-      padding: 9px 0 7px;
+      @media (min-width: $stop-scaling) {
+        padding: 0 6px;
+      }
+
+      @media (max-width: $tablet) and (orientation: portrait) {
+        padding: 0 0.4rem;
+      }
+
+      @media (max-width: $mobile) and (orientation: landscape) {
+        padding: 0 0.4rem;
+      }
+
+      &::before {
+        content: "/";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+
+      &:first-child {
+        &::before {
+          display: none;
+        }
+      }
     }
 
-    @media (max-width: $tablet) and (orientation: portrait) {
-      padding: 0.9rem 0;
-    }
+    a {
+      @include hover;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0.9rem 0 0.7rem;
+      text-decoration: underline;
+      color: inherit;
 
-    @media (max-width: $mobile) and (orientation: landscape) {
-      padding: 0.9rem 0;
+      @media (min-width: $stop-scaling) {
+        padding: 9px 0 7px;
+      }
+
+      @media (max-width: $tablet) and (orientation: portrait) {
+        padding: 0.9rem 0;
+      }
+
+      @media (max-width: $mobile) and (orientation: landscape) {
+        padding: 0.9rem 0;
+      }
     }
   }
 }
