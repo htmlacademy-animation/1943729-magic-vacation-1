@@ -334,6 +334,42 @@
 // NAVIGATION STORY COLOR
 
 body.story {
+  &.slide-first {
+    .page-header {
+      .page-header__wrapper {
+        .page-header__menu {
+          li {
+
+            a {
+              &::before {
+                background-color: $c-dark;
+              }
+
+              &:hover {
+                color: $c-dark;
+              }
+            }
+          }
+
+          li:hover {
+            a {
+
+              &::after,
+              &::before {
+                background-color: $c-dark;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .social-block__link {
+      &:hover {
+        color: $c-dark;
+      }
+    }
+  }
 
   &.style-second {
     .page-header {
@@ -367,6 +403,7 @@ body.story {
         }
       }
     }
+
 
     .slider__controls {
       .slider__control {
@@ -580,6 +617,27 @@ body.story {
       }
     }
 
+    .slider__controls {
+      .slider__control {
+        $c-dark: #a67ee5;
+        color: $c-dark;
+
+        &:focus {
+          color: $c-dark;
+
+          &::before {
+            border-color: $c-dark;
+          }
+        }
+
+        &:active {
+          &::before {
+            background-color: $c-dark;
+            border-color: $c-dark;
+          }
+        }
+      }
+    }
   }
 
 }
