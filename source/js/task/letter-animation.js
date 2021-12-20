@@ -17,7 +17,7 @@ export default () => {
       this._property = property;
       this._element = document.querySelector(this._elementSelector);
       this._timeOffset = this._timer;
-      this.treckerLatter = this._timer / 2;
+      this.treckerLetter = this._timer / 2;
       this._styleRow = styleRow;
       this._delay = delay;
       this.delayMethod = `minus`;
@@ -44,18 +44,18 @@ export default () => {
 
       span.style.transition = `${property} ${propertyDuration}ms ease ${propertyDelay}ms`;
 
-      this._timeOffset = this.treckerLatter;
+      this._timeOffset = this.treckerLetter;
 
       // Логика увеличения и уменьшении задержки в анимациях букв
       if (this.delayMethod === `plus`) {
-        this.treckerLatter += this._timer / 2;
-        if (this.treckerLatter >= this._timer) {
+        this.treckerLetter += this._timer / 2;
+        if (this.treckerLetter >= this._timer) {
           this.delayMethod = `minus`;
         }
       } else {
 
-        this.treckerLatter -= this._timer / 2;
-        if (this.treckerLatter <= 0) {
+        this.treckerLetter -= this._timer / 2;
+        if (this.treckerLetter <= 0) {
           this.delayMethod = `plus`;
         }
       }
@@ -67,11 +67,11 @@ export default () => {
       if (!this._element) {
         return;
       }
-      const text = this._element.textContent.trim().split(` `).filter((latter) => latter !== ``);
+      const text = this._element.textContent.trim().split(` `).filter((letter) => letter !== ``);
 
       const content = text.reduce((fragmentParent, word) => {
-        const wordElement = Array.from(word).reduce((fragment, latter) => {
-          fragment.appendChild(this.createElement(latter));
+        const wordElement = Array.from(word).reduce((fragment, letter) => {
+          fragment.appendChild(this.createElement(letter));
           return fragment;
         }, document.createDocumentFragment());
         const wordContainer = document.createElement(`span`);

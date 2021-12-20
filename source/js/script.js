@@ -8,7 +8,7 @@ import result from './modules/result.js';
 import form from './modules/form.js';
 import social from './modules/social.js';
 import FullPageScroll from './modules/full-page-scroll';
-import letterAnimation from './task/latter-animation.js';
+import letterAnimation from './task/letter-animation.js';
 // init modules
 mobileHeight();
 slider();
