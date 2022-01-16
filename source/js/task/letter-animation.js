@@ -17,7 +17,7 @@ export default () => {
       this._property = property;
       this._element = document.querySelector(this._elementSelector);
       this._timeOffset = this._timer;
-      this.treckerLetter = this._timer / 2;
+      this.trackerLetter = this._timer / 2;
       this._styleRow = styleRow;
       this._delay = delay;
       this.delayMethod = `minus`;
@@ -44,18 +44,18 @@ export default () => {
 
       span.style.transition = `${property} ${propertyDuration}ms ease ${propertyDelay}ms`;
 
-      this._timeOffset = this.treckerLetter;
+      this._timeOffset = this.trackerLetter;
 
       // Логика увеличения и уменьшении задержки в анимациях букв
       if (this.delayMethod === `plus`) {
-        this.treckerLetter += this._timer / 2;
-        if (this.treckerLetter >= this._timer) {
+        this.trackerLetter += this._timer / 2;
+        if (this.trackerLetter >= this._timer) {
           this.delayMethod = `minus`;
         }
       } else {
 
-        this.treckerLetter -= this._timer / 2;
-        if (this.treckerLetter <= 0) {
+        this.trackerLetter -= this._timer / 2;
+        if (this.trackerLetter <= 0) {
           this.delayMethod = `plus`;
         }
       }

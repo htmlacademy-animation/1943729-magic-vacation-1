@@ -41,7 +41,7 @@ const config = {
 
 const callback = function () {
 
-  const backgroundPage = document.querySelector(`.liqud-background`);
+  const backgroundPage = document.querySelector(`.liquid-background`);
   const toPrize = document.querySelector(`a[href="#prizes"]`);
 
   if (target.classList.contains(`active`)) {

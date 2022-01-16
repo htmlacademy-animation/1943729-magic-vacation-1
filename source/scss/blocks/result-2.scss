@@ -26,7 +26,7 @@
   z-index: 4;
   left: 15.1%;
   bottom: 17.5%;
-  animation-name: flamingo-animation, FadeIn, flamingo-infinite-animation;
+  animation-name: flamingoAnimation, fadeIn, flamingoAnimationInfinite;
   animation-duration: 2s, 1s, 2s;
   animation-delay: 0ms, 0ms, 2s;
   animation-iteration-count: 1, 1, infinite;
@@ -42,7 +42,7 @@
   z-index: 3;
   bottom: 17%;
   left: 20%;
-  animation-name: bag-animation;
+  animation-name: bagAnimation;
   animation-duration: 500ms;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -57,7 +57,7 @@
   right: 6.8%;
   bottom: 23.7%;
   opacity: 0;
-  animation-name: leaf-animation, FadeIn;
+  animation-name: leafAnimation, fadeIn;
   animation-duration: 2s, 500ms;
   animation-delay: 250ms;
   animation-timing-function: ease;
@@ -71,7 +71,7 @@
   z-index: 1;
   right: 9.5%;
   bottom: 27.9%;
-  animation-name: leaf-blue-right-animation, FadeIn;
+  animation-name: leafBlueRightAnimation, fadeIn;
   animation-duration: 2s, 1s;
   animation-timing-function: ease-in-out, linear;
   animation-fill-mode: forwards;
@@ -86,7 +86,7 @@
   z-index: 1;
   left: 0px;
   bottom: 17%;
-  animation-name: leaf-blue-left-animation, FadeIn;
+  animation-name: leafBlueLeftAnimation, fadeIn;
   animation-duration: 2s, 1s;
   animation-timing-function: ease-in-out, linear;
   animation-fill-mode: forwards;
@@ -99,7 +99,7 @@
     .form__button {
       max-width: 28rem;
       opacity: 0;
-      animation-name: FadeIn;
+      animation-name: fadeIn;
       animation-duration: 300ms;
       animation-delay: 750ms;
       animation-timing-function: ease-in-out;
@@ -109,7 +109,7 @@
     .form__field {
       max-width: 0%;
       opacity: 0;
-      animation-name: input_form-animation, FadeIn;
+      animation-name: inputFormAnimation, fadeIn;
       animation-duration: 300ms;
       animation-delay: 950ms, 850ms;
       animation-timing-function: linear, ease-in-out;
