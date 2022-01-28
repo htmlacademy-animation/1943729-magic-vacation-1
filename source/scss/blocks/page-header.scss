@@ -135,6 +135,7 @@
   align-items: center;
   opacity: 1;
   transform: translateY(-4rem);
+  
 
   @media (max-width: $tablet) and (orientation: portrait) {
     position: fixed;
@@ -351,6 +352,11 @@
 body {
   &.page_load {
     .page-header__nav {
+     
+        transform: translateY(0rem);
+        transition: transform 500ms;
+        transition-delay: 0ms;
+
       .page-header__menu {
         li {
           a {
