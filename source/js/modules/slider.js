@@ -6,7 +6,7 @@ export default () => {
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
   const body = document.querySelector(`body`);
 
-  function addedClass(conteiner, index) {
+  function addedClass(container, index) {
     const classMass = [
       `slide-first`,
       `style-second`,
@@ -14,9 +14,9 @@ export default () => {
       `style-fourd`
     ]
     for (let i = 0; i <= classMass.length; i++) {
-      conteiner.classList.remove(classMass[i]);
+      container.classList.remove(classMass[i]);
     }
-    conteiner.classList.add(classMass[index-1]);
+    container.classList.add(classMass[index - 1]);
   }
 
   const setSlider = function () {
@@ -31,8 +31,6 @@ export default () => {
         },
         on: {
           slideChange: () => {
-            console.log(storySlider.activeIndex)
-
             if (storySlider.activeIndex === 0 || storySlider.activeIndex === 1) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
               addedClass(body, 1);
@@ -54,7 +52,6 @@ export default () => {
         observer: true,
         observeParents: true
       });
-      console.log(storySlider.activeIndex)
     } else {
       storySlider = new Swiper(`.js-slider`, {
 
@@ -74,7 +71,6 @@ export default () => {
         },
         on: {
           slideChange: () => {
-            console.log(storySlider.activeIndex)
             if (storySlider.activeIndex === 0) {
               sliderContainer.style.backgroundImage = `url("img/slide1.jpg")`;
               addedClass(body, 1);
