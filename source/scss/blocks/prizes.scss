@@ -105,6 +105,7 @@
 }
 
 .prizes__item {
+  display: none;
   margin-left: 7.5rem;
 
   @media (min-width: $stop-scaling) {
@@ -327,6 +328,15 @@
     @media (max-width: $mobile) and (orientation: landscape) {
       width: 0.5rem;
       height: 0.5rem;
+    }
+  }
+}
+
+
+.active{
+  .prizes{
+    .prizes__item{
+        display: block;
     }
   }
 }

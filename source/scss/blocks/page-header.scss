@@ -357,6 +357,7 @@ body {
             &.active {
               &::after {
                 transform: translateX(0%);
+                
               }
             }
 
@@ -388,12 +389,12 @@ body {
       }
     }
 
-    .page-header__nav,
     .page-header__logo {
       transform: translateY(0);
       transition: transform 800ms;
       transition-timing-function: cubic-bezier(0.08, 0.87, 0.3, 1);
     }
+    
   }
 
 }
