@@ -2497,6 +2497,11 @@ section#game.active input#message-field {
   transition-delay: 0ms;
 }
 
+body.page_load .page-header__nav {
+  transform: translateY(0rem);
+  transition: transform 500ms;
+  transition-delay: 0ms;
+}
 body.page_load .page-header__nav .page-header__menu li a.active::after {
   transform: translateX(0%);
 }
