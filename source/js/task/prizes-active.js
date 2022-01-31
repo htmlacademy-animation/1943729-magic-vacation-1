@@ -11,7 +11,7 @@ export default () => {
 
         setTimeout(function(){
             cases.classList.add('active');
-        }, 5000);
+        }, 4800);
 
         
         count = 1;
