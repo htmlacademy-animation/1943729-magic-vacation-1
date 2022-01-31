@@ -1,5 +1,6 @@
 export default () => {
   const prizes = document.getElementById('prizes');
+  const list = document.querySelector('.prizes__list');
   const journeys = document.querySelector('.prizes__item--journeys');
   const cases = document.querySelector('.prizes__item--cases');
   let count = 0;
@@ -13,11 +14,15 @@ export default () => {
             cases.classList.add('active');
         }, 4800);
 
+        setTimeout(function(){
+           list.classList.add('done')
+        }, 5200);
+        clearInterval(activator);
         
         count = 1;
       }
-    }
+    } 
   }
-  setInterval(prizesActive, 500);
+  let activator = setInterval(prizesActive, 500);
 
 }
