@@ -2676,7 +2676,6 @@ body.page_load .page-header__logo {
 }
 
 .prizes__item {
-  opacity: 0;
   margin-left: 7.5rem;
 }
 @media (min-width: 2000px) {
@@ -2932,30 +2931,40 @@ body.page_load .page-header__logo {
   }
 }
 
+.prizes .prizes__item {
+  opacity: 0;
+}
 .prizes .prizes__item .prizes__icon object {
   display: none;
 }
 .prizes .prizes__item.active {
   opacity: 1;
-  transition-property: opacity;
-  transition-duration: 300ms;
-  transition-timing-function: ease-out;
-  transition-delay: 200ms;
+  animation-name: FadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+  animation-delay: 0ms;
+  animation-iteration-count: 1;
 }
 .prizes .prizes__item.active .prizes__icon object {
   display: block;
 }
 .prizes .prizes__item.active.prizes__item--journeys {
-  animation-name: journeys;
+  animation-name: FadeIn, journeys;
   animation-fill-mode: forwards;
-  animation-duration: 600ms;
+  animation-duration: 300ms, 600ms;
   animation-timing-function: ease-out;
-  animation-delay: 4500ms;
+  animation-delay: 0ms, 4500ms;
+  animation-iteration-count: 1;
 }
 @media (max-width: 1024px) and (orientation: portrait) {
   .prizes .prizes__item.active.prizes__item--journeys {
     animation-name: none;
   }
+}
+.prizes .done .prizes__item.active {
+  animation-name: none;
+  left: 0;
 }
 
 .result {

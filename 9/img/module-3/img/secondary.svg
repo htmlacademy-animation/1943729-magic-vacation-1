@@ -8,7 +8,7 @@
     attributeType="CSS" 
     attributeName="opacity" 
     values="0; 1" keyTimes="0; 1" 
-    dur="300ms" 
+    dur="600ms" 
     begin="200ms" 
     repeatCount="1" 
     fill="freeze" 
@@ -284,25 +284,28 @@
 
   @keyframes smallLief{
   0%{
-    transform: rotate( 0deg ) skewX( 0deg )translateY(0px);
+    transform: rotate( 0deg ) skewX( 0deg );
   }
   10%{
-    transform: rotate( -1deg ) skewX( 0deg ) translateY(1px);
+    transform: rotate( -0.5deg ) skewX( 0deg ) ;
   }
   40%{
-    transform: rotate( 2deg ) skewX( -1deg ) translateY(2px);
+    transform: rotate( 1deg ) skewX( -1deg );
   }
   60%{
-    transform: rotate( -2deg ) skewX( 1deg ) translateY(2px);
+    transform: rotate( -1deg ) skewX( 1deg ) ;
   }
   70%{
-    transform: rotate( 1deg ) skewX( -1deg ) translateY(1px);
+    transform: rotate( 0.5deg ) skewX( -1deg ) ;
   }
   80%{
-    transform: rotate( -1deg ) skewX( 1deg ) translateY(1px);
+    transform: rotate( -0.5deg ) skewX( 1deg );
+  }
+  85%{
+    transform: rotate( 0deg ) skewX( 0deg ) ;
   }
   100%{
-    transform: rotate( 0deg ) skewX( 0deg ) translateY(0px);
+    transform: rotate( 0deg ) skewX( 0deg ) ;
   }
   }
   @keyframes bigLief{

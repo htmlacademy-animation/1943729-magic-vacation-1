@@ -11006,6 +11006,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   const prizes = document.getElementById('prizes');
+  const list = document.querySelector('.prizes__list');
   const journeys = document.querySelector('.prizes__item--journeys');
   const cases = document.querySelector('.prizes__item--cases');
   let count = 0;
@@ -11017,14 +11018,18 @@ __webpack_require__.r(__webpack_exports__);
 
         setTimeout(function(){
             cases.classList.add('active');
-        }, 5000);
+        }, 4800);
 
+        setTimeout(function(){
+           list.classList.add('done')
+        }, 5200);
+        clearInterval(activator);
         
         count = 1;
       }
-    }
+    } 
   }
-  setInterval(prizesActive, 500);
+  let activator = setInterval(prizesActive, 500);
 
 });
 
