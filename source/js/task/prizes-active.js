@@ -10,19 +10,20 @@ export default () => {
       if (prizes.classList.contains('active')) {
         journeys.classList.add('active');
 
-        setTimeout(function(){
-            cases.classList.add('active');
+        setTimeout(function () {
+          cases.classList.add('active');
         }, 4800);
 
-        setTimeout(function(){
-           list.classList.add('done')
-        }, 5200);
-        clearInterval(activator);
+        setTimeout(function () {
+          list.classList.add('done');
+          clearInterval(activator);
+        }, 5100);
         
         count = 1;
       }
-    } 
+    }
   }
+
   let activator = setInterval(prizesActive, 500);
 
 }
