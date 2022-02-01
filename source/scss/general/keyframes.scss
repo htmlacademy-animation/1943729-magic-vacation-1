@@ -249,3 +249,13 @@
     transform: translateX(0%) rotate(0deg);
   }
 }
+
+
+@keyframes journeys{
+  0%{
+    left: 268px;
+  }
+  100%{
+    left: 0;
+  }
+}

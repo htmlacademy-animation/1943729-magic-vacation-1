@@ -152,11 +152,13 @@
     opacity: 0;
     transform: translateY(-1rem);
     pointer-events: none;
+    display: none;
 
     .page-header--menu-opened & {
       transform: translateX(0);
       opacity: 1;
       pointer-events: painted;
+      display: block;
     }
   }
 
@@ -352,11 +354,10 @@
 body {
   &.page_load {
     .page-header__nav {
-     
         transform: translateY(0rem);
         transition: transform 500ms;
         transition-delay: 0ms;
-  
+
       .page-header__menu {
         li {
           a {
