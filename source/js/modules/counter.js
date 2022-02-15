@@ -62,8 +62,9 @@ export default (fpsInterval) => {
       }
 
       render()
+      
       if (MM == '00' && SS == '00') {
-        end()
+        end() 
       }
     }
   }
