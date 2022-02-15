@@ -28,7 +28,7 @@ export default (fpsInterval) => {
     SS = '00';
     MM = '05';
     next = true;
-    render()
+    render();
   }
 
   function start() {
@@ -38,7 +38,7 @@ export default (fpsInterval) => {
   }
 
   function end() {
-    console.log('end')
+    console.log('end');
     cancelAnimationFrame(tick);
     next = false;
   }
@@ -61,10 +61,10 @@ export default (fpsInterval) => {
         MM = "0" + toNumber(MM);
       }
 
-      render()
-      
+      render();
+
       if (MM == '00' && SS == '00') {
-        end() 
+        end();
       }
     }
   }
@@ -82,6 +82,10 @@ export default (fpsInterval) => {
     }
   }
 
+  const resultNegative = document.getElementById('result3').querySelector('.result__button');
+  resultNegative.onclick = function () {
+    refresh();
+  }
   // Обсервер для Game
 
   let target = document.getElementById(`game`);
@@ -96,10 +100,10 @@ export default (fpsInterval) => {
 
     if (target.classList.contains('active')) {
       if (count == 0) {
-        start()
+        start();
       }
     } else {
-      refresh()
+      refresh();
     }
 
   };
