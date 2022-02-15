@@ -229,6 +229,10 @@
   .result__title {
     width: 57.3rem;
     height: 11.3rem;
+    animation-name: scaleSlogan;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease;
 
     @media (min-width: $stop-scaling) {
       width: 573px;
@@ -276,6 +280,24 @@
 
     @media (max-width: $mobile) and (orientation: landscape) {
       width: 45rem;
+    }
+
+    svg {
+      transform: translateY(-4.2rem);
+      overflow: inherit;
+
+      path {
+        opacity: 0;
+
+        &.start-translate {
+          opacity: 0;
+          animation-name: translateSlogan;
+          animation-duration: 0.5s;
+          animation-delay: 0.1s;
+          animation-fill-mode: both;
+          animation-timing-function: ease-in;
+        }
+      }
     }
   }
 }

@@ -400,9 +400,18 @@
           </div>
           <h2 class="result__title">
             <span class="visually-hidden">ПОбеда!</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.85 109.24">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.85 109.24" class="dash">
               <path d="M16,24.44V92H2.6V8H75V92H61.52V24.44H16Z" transform="translate(-2.1 -1.5)" fill="none"
-                stroke="currentColor" />
+                stroke="currentColor">
+                <!-- <animate 
+                  attributeName="stroke-dasharray" 
+                  from="0, 149.3066609700521" 
+                  to="149.3066609700521, 0" 
+                  dur="500ms" 
+                  fill="freeze" 
+                  begin="1s">
+                </animate> -->
+              </path>
               <path
                 d="M148.76,5.6c32.88,0,59.52,19.92,59.52,44.4s-26.64,44.4-59.52,44.4S89.24,74.48,89.24,50,115.88,5.6,148.76,5.6Zm0,72.12c24.48,0,44.4-12.36,44.4-27.72s-19.92-27.84-44.4-27.84C124,22.16,104,34.52,104,50S124,77.72,148.76,77.72Z"
                 transform="translate(-2.1 -1.5)" fill="none" stroke="currentColor" />
@@ -420,6 +429,7 @@
               <path
                 d="M554.12,70.4L555.55,2H569l1.44,68.4H554.12Zm8.28,6.36c4.8,0,8,3.24,8,8.16a8,8,0,1,1-16.08,0C554.35,80,557.59,76.76,562.39,76.76Z"
                 transform="translate(-2.1 -1.5)" fill="none" stroke="currentColor" />
+
             </svg>
           </h2>
           <div class="result__text">
@@ -457,7 +467,7 @@
           </div>
           <h2 class="result__title">
             <span class="visually-hidden">ПОбеда!</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.85 109.24">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.85 109.24" class="dash">
               <path d="M16,24.44V92H2.6V8H75V92H61.52V24.44H16Z" transform="translate(-2.1 -1.5)" fill="none"
                 stroke="currentColor" />
               <path
@@ -512,7 +522,7 @@
           </div>
           <h2 class="result__title">
             <span class="visually-hidden">Не угадал!</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660.77 109.24">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660.77 109.24" class="dash" transform="translate(0 -100)">
               <path d="M2.66,92V8H16.1V42.2H53.3V8H66.74V92H53.3V58.64H16.1V92H2.66Z" transform="translate(-2.16 -1.5)"
                 fill="none" stroke="currentColor" />
               <path d="M147.62,8V24.44H97V41.6h33.6V58H97V75.56h50.64V92H83.54V8h64.08Z"
@@ -555,7 +565,6 @@
     </section>
 
   </main>
-
 </body>
 
 </html>

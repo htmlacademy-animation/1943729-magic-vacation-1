@@ -259,3 +259,33 @@
     left: 0;
   }
 }
+
+@keyframes scaleSlogan {
+  from {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes translateSlogan {
+  0% {
+    transform: translateY(0);
+  }
+
+  60% {
+    transform: translateY(4.2rem);
+  }
+
+  85% {
+    transform: translateY(3.6rem);
+  }
+
+  100% {
+    transform: translateY(4.2rem);
+  }
+}
