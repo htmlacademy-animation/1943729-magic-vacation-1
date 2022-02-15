@@ -1,3 +1,5 @@
+// import counterPrizes from '../modules/counter-prizes.js';
+
 export default () => {
   const prizes = document.getElementById('prizes');
   const list = document.querySelector('.prizes__list');
@@ -13,10 +15,12 @@ export default () => {
 
         setTimeout(function () {
           cases.classList.add('active');
+          // counterPrizes('.prizes__item--cases', 12, 1, 7);
         }, 4800);
 
         setTimeout(function () {
           codes.classList.add('active');
+          // counterPrizes('.prizes__item--codes', 12, 11, 900);
         }, 8000);
 
         setTimeout(function () {

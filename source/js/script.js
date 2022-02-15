@@ -11,7 +11,7 @@ import FullPageScroll from './modules/full-page-scroll';
 import letterAnimation from './task/letter-animation.js';
 import prizesActive from './task/prizes-active.js';
 
-import counterGame from './modules/counter.js';
+import counterGame from './modules/counter-game.js';
 
 // init modules
 mobileHeight();

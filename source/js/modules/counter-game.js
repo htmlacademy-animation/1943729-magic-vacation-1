@@ -3,9 +3,6 @@ import {
 } from "lodash";
 
 export default (fpsInterval) => {
-  let requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-  let cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
 
   let MMText = document.querySelectorAll('.game__counter .min')[0];
   let SSText = document.querySelectorAll('.game__counter .sec')[0];
@@ -15,7 +12,7 @@ export default (fpsInterval) => {
     elapsed,
     MM,
     SS,
-    next;
+    timer;
 
   function render() {
     MMText.textContent = MM;
@@ -24,55 +21,50 @@ export default (fpsInterval) => {
 
   function refresh() {
     count = 0;
-    cancelAnimationFrame(tick)
+    cancelAnimationFrame(timer)
     SS = '00';
     MM = '05';
-    next = true;
     render();
   }
 
   function start() {
-    console.log('Старт таймера Game');
-    requestAnimationFrame(tick);
+    timer = requestAnimationFrame(tick);
     count = 1;
   }
 
   function end() {
-    console.log('end');
-    cancelAnimationFrame(tick);
-    next = false;
+    cancelAnimationFrame(timer);
   }
 
   function counter() {
-    if (next) {
 
-      if (SS == '00') {
-        MM = toNumber(MM) - 1;
-        MM = '0' + MM;
-        SS = "59";
-      }
-
-      SS = toNumber(SS) - 1;
-
-      if (SS < 10) {
-        SS = "0" + SS;
-      }
-      if (MM < 10) {
-        MM = "0" + toNumber(MM);
-      }
-
-      render();
-
-      if (MM == '00' && SS == '00') {
-        end();
-      }
+    if (SS == '00') {
+      MM = toNumber(MM) - 1;
+      MM = '0' + MM;
+      SS = "59";
     }
+
+    SS = toNumber(SS) - 1;
+
+    if (SS < 10) {
+      SS = "0" + SS;
+    }
+    if (MM < 10) {
+      MM = "0" + toNumber(MM);
+    }
+
+    render();
+
+    if (MM == '00' && SS == '00') {
+      end();
+    }
+
   }
 
   // функция отрисовки
   function tick() {
 
-    requestAnimationFrame(tick);
+    timer = requestAnimationFrame(tick);
     now = Date.now();
     elapsed = now - then;
 
@@ -86,8 +78,9 @@ export default (fpsInterval) => {
   resultNegative.onclick = function () {
     refresh();
   }
-  // Обсервер для Game
 
+
+  // Обсервер для Game
   let target = document.getElementById(`game`);
   const config = {
     className: true,
