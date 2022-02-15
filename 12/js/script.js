@@ -27501,10 +27501,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./source/js/modules/counter.js":
-/*!**************************************!*\
-  !*** ./source/js/modules/counter.js ***!
-  \**************************************/
+/***/ "./source/js/modules/counter-game.js":
+/*!*******************************************!*\
+  !*** ./source/js/modules/counter-game.js ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -27515,9 +27515,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ((fpsInterval) => {
-  let requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-    window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-  let cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
 
   let MMText = document.querySelectorAll('.game__counter .min')[0];
   let SSText = document.querySelectorAll('.game__counter .sec')[0];
@@ -27527,7 +27524,7 @@ __webpack_require__.r(__webpack_exports__);
     elapsed,
     MM,
     SS,
-    next;
+    timer;
 
   function render() {
     MMText.textContent = MM;
@@ -27536,55 +27533,50 @@ __webpack_require__.r(__webpack_exports__);
 
   function refresh() {
     count = 0;
-    cancelAnimationFrame(tick)
+    cancelAnimationFrame(timer)
     SS = '00';
     MM = '05';
-    next = true;
     render();
   }
 
   function start() {
-    console.log('Старт таймера Game');
-    requestAnimationFrame(tick);
+    timer = requestAnimationFrame(tick);
     count = 1;
   }
 
   function end() {
-    console.log('end');
-    cancelAnimationFrame(tick);
-    next = false;
+    cancelAnimationFrame(timer);
   }
 
   function counter() {
-    if (next) {
 
-      if (SS == '00') {
-        MM = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["toNumber"])(MM) - 1;
-        MM = '0' + MM;
-        SS = "59";
-      }
-
-      SS = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["toNumber"])(SS) - 1;
-
-      if (SS < 10) {
-        SS = "0" + SS;
-      }
-      if (MM < 10) {
-        MM = "0" + Object(lodash__WEBPACK_IMPORTED_MODULE_0__["toNumber"])(MM);
-      }
-
-      render();
-
-      if (MM == '00' && SS == '00') {
-        end();
-      }
+    if (SS == '00') {
+      MM = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["toNumber"])(MM) - 1;
+      MM = '0' + MM;
+      SS = "59";
     }
+
+    SS = Object(lodash__WEBPACK_IMPORTED_MODULE_0__["toNumber"])(SS) - 1;
+
+    if (SS < 10) {
+      SS = "0" + SS;
+    }
+    if (MM < 10) {
+      MM = "0" + Object(lodash__WEBPACK_IMPORTED_MODULE_0__["toNumber"])(MM);
+    }
+
+    render();
+
+    if (MM == '00' && SS == '00') {
+      end();
+    }
+
   }
 
   // функция отрисовки
   function tick() {
 
-    requestAnimationFrame(tick);
+    timer = requestAnimationFrame(tick);
     now = Date.now();
     elapsed = now - then;
 
@@ -27598,8 +27590,9 @@ __webpack_require__.r(__webpack_exports__);
   resultNegative.onclick = function () {
     refresh();
   }
-  // Обсервер для Game
 
+
+  // Обсервер для Game
   let target = document.getElementById(`game`);
   const config = {
     className: true,
@@ -28175,7 +28168,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/full-page-scroll */ "./source/js/modules/full-page-scroll.js");
 /* harmony import */ var _task_letter_animation_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./task/letter-animation.js */ "./source/js/task/letter-animation.js");
 /* harmony import */ var _task_prizes_active_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./task/prizes-active.js */ "./source/js/task/prizes-active.js");
-/* harmony import */ var _modules_counter_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/counter.js */ "./source/js/modules/counter.js");
+/* harmony import */ var _modules_counter_game_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/counter-game.js */ "./source/js/modules/counter-game.js");
 // modules
 
 
@@ -28204,7 +28197,7 @@ Object(_modules_social_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
 Object(_task_letter_animation_js__WEBPACK_IMPORTED_MODULE_9__["default"])();
 Object(_task_prizes_active_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
 
-Object(_modules_counter_js__WEBPACK_IMPORTED_MODULE_11__["default"])(1000);
+Object(_modules_counter_game_js__WEBPACK_IMPORTED_MODULE_11__["default"])(1000);
 
 const fullPageScroll = new _modules_full_page_scroll__WEBPACK_IMPORTED_MODULE_8__["default"]();
 fullPageScroll.init();
@@ -28385,6 +28378,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+// import counterPrizes from '../modules/counter-prizes.js';
+
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   const prizes = document.getElementById('prizes');
   const list = document.querySelector('.prizes__list');
@@ -28400,10 +28395,12 @@ __webpack_require__.r(__webpack_exports__);
 
         setTimeout(function () {
           cases.classList.add('active');
+          // counterPrizes('.prizes__item--cases', 12, 1, 7);
         }, 4800);
 
         setTimeout(function () {
           codes.classList.add('active');
+          // counterPrizes('.prizes__item--codes', 12, 11, 900);
         }, 8000);
 
         setTimeout(function () {
