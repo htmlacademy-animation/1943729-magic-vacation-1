@@ -7,30 +7,5 @@
     <path d="M463.75,92l28-84h27.12l28.08,84H533.47l-7.8-23.52h-37.8L480.07,92H463.75Zm56.64-40L507,11.84,493.51,52h26.88Z" transform="translate(-2.1 -1.5)" fill="none" stroke="white"  />
     <path d="M554.12,70.4L555.55,2H569l1.44,68.4H554.12Zm8.28,6.36c4.8,0,8,3.24,8,8.16a8,8,0,1,1-16.08,0C554.35,80,557.59,76.76,562.39,76.76Z" transform="translate(-2.1 -1.5)" fill="none" stroke="white"  />
     
-    
-    <style>
-         svg {
-            display: block;
-            width: 100%;
-            height: 100%;
-            stroke-width: 0.17rem;
-            stroke-linejoin: round;
-            background:black;
-        }
-        path {
-            stroke-dasharray: 100%;
-            stroke-dashoffset: 200;
-            animation-name: dash;
-            animation-fill-mode: forwards;
-            animation-duration: 1s;
-            animation-timing-function: ease-out;
-            animation-iteration-count: 1;
-          }
   
-          @keyframes dash {
-            to {
-              stroke-dashoffset: 0;
-            }
-          }
-    </style>
 </svg>
