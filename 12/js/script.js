@@ -27540,7 +27540,7 @@ __webpack_require__.r(__webpack_exports__);
     SS = '00';
     MM = '05';
     next = true;
-    render()
+    render();
   }
 
   function start() {
@@ -27550,7 +27550,7 @@ __webpack_require__.r(__webpack_exports__);
   }
 
   function end() {
-    console.log('end')
+    console.log('end');
     cancelAnimationFrame(tick);
     next = false;
   }
@@ -27573,10 +27573,10 @@ __webpack_require__.r(__webpack_exports__);
         MM = "0" + Object(lodash__WEBPACK_IMPORTED_MODULE_0__["toNumber"])(MM);
       }
 
-      render()
-      
+      render();
+
       if (MM == '00' && SS == '00') {
-        end() 
+        end();
       }
     }
   }
@@ -27594,6 +27594,10 @@ __webpack_require__.r(__webpack_exports__);
     }
   }
 
+  const resultNegative = document.getElementById('result3').querySelector('.result__button');
+  resultNegative.onclick = function () {
+    refresh();
+  }
   // Обсервер для Game
 
   let target = document.getElementById(`game`);
@@ -27608,10 +27612,10 @@ __webpack_require__.r(__webpack_exports__);
 
     if (target.classList.contains('active')) {
       if (count == 0) {
-        start()
+        start();
       }
     } else {
-      refresh()
+      refresh();
     }
 
   };
