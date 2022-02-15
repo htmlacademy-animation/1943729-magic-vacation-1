@@ -26,7 +26,7 @@ export default (fpsInterval) => {
     count = 0;
     cancelAnimationFrame(tick)
     SS = '00';
-    MM = '00';
+    MM = '05';
     next = true;
     render()
   }
@@ -45,21 +45,24 @@ export default (fpsInterval) => {
 
   function counter() {
     if (next) {
-      SS = toNumber(SS) + 1;
+
+      if (SS == '00') {
+        MM = toNumber(MM) - 1;
+        MM = '0' + MM;
+        SS = "59";
+      }
+
+      SS = toNumber(SS) - 1;
+
       if (SS < 10) {
         SS = "0" + SS;
       }
       if (MM < 10) {
         MM = "0" + toNumber(MM);
       }
-      if (SS >= 60) {
-        MM = toNumber(MM) + 1;
-        MM = '0' + MM;
-        SS = "00";
-      }
 
       render()
-      if (MM >= '05') {
+      if (MM == '00' && SS == '00') {
         end()
       }
     }
